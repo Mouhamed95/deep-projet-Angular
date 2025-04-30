@@ -3,7 +3,7 @@ import { ControlComponent } from "../../shared/control/control.component";
 import { ButtonComponent } from '../../shared/button/button.component';
 
 import {FormsModule} from "@angular/forms"
-import { title } from 'process';
+
 import { NewTicket } from './new-ticket.model';
 
 @Component({
@@ -22,8 +22,8 @@ export class NewTicketComponent {
 
   add = output<NewTicket>()
 
-  onSubmit(text:string, textera:string) {
-    this.add.emit({title:title, text:textera})
+  onSubmit(data:NewTicket) {
+    this.add.emit({title:data.title, text:data.text})
     // form.reset()
 this.form().nativeElement.reset()
     

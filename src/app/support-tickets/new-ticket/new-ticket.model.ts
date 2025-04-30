@@ -1,4 +1,4 @@
 export interface NewTicket{
     title: string,
-    text:string
+    text:string,
 }

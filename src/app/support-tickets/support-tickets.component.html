@@ -2,6 +2,16 @@
         <img src="list.png" alt="A list of items" />
         <h2>Support Tickets</h2>
       </header> -->
+<div>
+  <ul>
+    @for (ticket of tickets; track ticket.id) {
+    <li><app-tickets [data]="ticket" (close)="onCloseTickets(ticket.id)" /></li>
+    }@empty{
+    <p>No Tickets available</p>
+    }
+  </ul>
+</div>
+
 <div id="new-ticket">
-  <app-new-ticket />
+  <app-new-ticket (add)="onAdd($event)" />
 </div>
